@@ -1,0 +1,9 @@
+class BaseResultController:
+    def __init__(self, context, *args, **kwargs):
+        self.context = context
+
+    def show(self): ...
+
+    def close(self): ...
+
+    def _connect_view(self): ...
