@@ -6,7 +6,6 @@ from ..resources.MainWindowUI import Ui_Dialog
 
 class MainMenuView(QtWidgets.QDialog):
     open_module_sig = QtCore.Signal(str)
-    closing = QtCore.Signal()
 
     def __init__(self):
         super().__init__()
@@ -20,7 +19,7 @@ class MainMenuView(QtWidgets.QDialog):
         self.ui.Counting.clicked.connect(lambda: self.open_module('Counting'))
         self.ui.Concentration.clicked.connect(lambda: self.open_module('Concentration'))
         self.ui.Desc.clicked.connect(lambda: self.open_module('Desc'))
-        self.ui.CloseButton.clicked.connect(lambda: self.closing.emit())
+        self.ui.CloseButton.clicked.connect(self.reject)
 
     @Slot(str)
     def open_module(self, module: str):

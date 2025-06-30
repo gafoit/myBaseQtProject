@@ -7,7 +7,6 @@ from .Model import MainMenuModel
 
 class MainWindowController(BaseMainWindowController):
     save = QtCore.Signal()
-    closing = QtCore.Signal()
 
     def __init__(self, context):
         super().__init__(context)
@@ -21,10 +20,5 @@ class MainWindowController(BaseMainWindowController):
     def hide(self):
         self.view.hide()
 
-    def close(self):
-        self.view.close()
-
     def _connect_view(self):
-        self.model.save.connect(lambda: self.save.emit())
-        self.view.closing.connect(lambda: self.closing.emit())
         self.view.open_module_sig.connect(lambda _: print(_))

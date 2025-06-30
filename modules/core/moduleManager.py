@@ -12,12 +12,12 @@ class ModuleManager:
 
     @classmethod
     def register(cls, name, module_cls):
-        print(f"Registering {name}")
+        print(f"Registering <{name}>: {module_cls}")
         try:
             cls.registry[name] = module_cls
         except Exception as e:
             print(e)
-        print(f"Registered {module_cls}")
+        print(f"Registered <{name}>: {module_cls}")
 
     @classmethod
     def create(cls, name, *args, **kwargs):

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>&quot;Найди Пару&quot;</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="PairsFound">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>16</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Пар Найдено:</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="PairsLeft">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>16</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="text">
+         <string>Пар Осталось:</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item row="2" column="0">
+     <widget class="QFrame" name="frame">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Shape::NoFrame</enum>
+      </property>
+      <property name="lineWidth">
+       <number>2</number>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2"/>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QPushButton" name="StartButton">
+      <property name="text">
+       <string>Начать Игру</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="Shortcuts">
+    <property name="title">
+     <string>Назад</string>
+    </property>
+    <addaction name="MainMenu"/>
+    <addaction name="separator"/>
+   </widget>
+   <widget class="QMenu" name="DisplayOptions">
+    <property name="title">
+     <string>Настроить</string>
+    </property>
+    <addaction name="ModeOptions_2"/>
+    <addaction name="separator"/>
+    <addaction name="MainFont_2"/>
+    <addaction name="CardFont_2"/>
+   </widget>
+   <addaction name="Shortcuts"/>
+   <addaction name="DisplayOptions"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="sizeGripEnabled">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <action name="MainMenu">
+   <property name="text">
+    <string>Главное Меню</string>
+   </property>
+  </action>
+  <action name="ModeOptions">
+   <property name="text">
+    <string>Параметры режима</string>
+   </property>
+  </action>
+  <action name="CardsFont">
+   <property name="text">
+    <string>Карточек</string>
+   </property>
+  </action>
+  <action name="MainFont">
+   <property name="text">
+    <string>Основной текст</string>
+   </property>
+   <property name="iconText">
+    <string>Основной текст</string>
+   </property>
+  </action>
+  <action name="CardFont">
+   <property name="text">
+    <string>Карточки</string>
+   </property>
+   <property name="iconText">
+    <string>Карточки</string>
+   </property>
+  </action>
+  <action name="MainFont_2">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Основной шрифт</string>
+   </property>
+   <property name="statusTip">
+    <string/>
+   </property>
+   <property name="whatsThis">
+    <string/>
+   </property>
+   <property name="shortcutContext">
+    <enum>Qt::ShortcutContext::WidgetShortcut</enum>
+   </property>
+  </action>
+  <action name="CardFont_2">
+   <property name="text">
+    <string>Шрифт карточек</string>
+   </property>
+  </action>
+  <action name="ModeOptions_2">
+   <property name="text">
+    <string>Режим</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -3,8 +3,6 @@ from PySide6.QtCore import Slot, QObject
 
 
 class MainMenuModel(QObject):
-    save = QtCore.Signal()
-
     def __init__(self, context, /):
         super().__init__()
         self.context = context
@@ -12,4 +10,3 @@ class MainMenuModel(QObject):
     @Slot(str)
     def open(self, module_name):
         self.context.create(module_name, self.context)
-        self.save.emit()

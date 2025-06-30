@@ -1,3 +1,5 @@
+from PySide6.QtGui import QIcon
+
 from .moduleManager import ModuleManager
 
 
@@ -9,7 +11,9 @@ class AppContext:
         self.settingsManager = None
 
     def create_module(self, module_name, *args, **kwargs):
-        return self.moduleManager.create(module_name, *args, **kwargs)
+        res = self.moduleManager.create(module_name, *args, **kwargs)
+        res.main_window_controller.view.setWindowIcon(QIcon("F:\\Best_Dama\\Assets\\Mental_Icon.png"))
+        return res
 
     def settings(self):
         return self.settingsManager
