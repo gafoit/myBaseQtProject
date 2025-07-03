@@ -44,10 +44,8 @@ class FindPairModel(QObject):
 
     def create_cards(self):
         self.cards = [i // 2 + 1 for i in range(self.pair_count * 2)]
-        print(self.cards)
         shuffle(self.cards)
         self.cards = grid_btn(self.cards)
-        print(self.cards)
 
     def get_cards(self):
         return self.cards
