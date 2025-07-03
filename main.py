@@ -19,6 +19,7 @@ def start_app():
     # from modules.base_module import BaseModule
     # context.create_module('Base', context)
     import_modules()
+
     fp = context.create_module('FindPair',context)
     fp.main_window_controller.view.show()
 

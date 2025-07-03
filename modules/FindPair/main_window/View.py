@@ -21,9 +21,12 @@ class FindPairMainWindow(QtWidgets.QMainWindow):
         self.ui.PairsFound.setText(found)
 
     def add_cards(self, cards_list: list[list[int]]):
-        for i in self.ui.gridLayout_2.children():
-            if isinstance(i, QtWidgets.QWidget):
-                i.deleteLater()
+        layout = self.ui.frame.layout()
+        while layout.count():
+            item = layout.takeAt(0)
+            widget = item.widget()
+            if widget:
+                widget.deleteLater()
         for i in range(len(cards_list)):
             for j in range(len(cards_list[i])):
                 self.ui.gridLayout_2.addWidget(QPushButton(str(cards_list[i][j])), i, j)

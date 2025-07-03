@@ -1,4 +1,5 @@
 from math import ceil
+from typing import Any
 
 from PySide6 import QtCore
 from PySide6.QtCore import Slot, QObject
@@ -28,24 +29,34 @@ def grid_btn(buttons: list[int]):
 class FindPairModel(QObject):
     def __init__(self, context, /):
         super().__init__()
+        self.pair_count = None
+        self.preview_time = None
+        self.Endless = None
         self.context = context
         self.guesses = 0
-        self.pair_count = 5
-        self.preview_time = 3000
-        self.Endless = False
+        self.load_settings()
         self.cards = []
         self.found_pairs = 0
         self.hide_timer = QtCore.QTimer()
+        assert isinstance(self.preview_time, int)
         self.hide_timer.setInterval(self.preview_time)
+
+    def load_settings(self):
+        data = self.context.settingsManager.load(
+            ['pair_count', 'preview_time', 'Endless'], [int, int, bool], 'FindPair')
+        self.pair_count, self.preview_time, self.Endless = data['pair_count'], data['preview_time'], data['Endless']
 
     @Slot()
     def start(self):
         self.create_cards()
 
     def create_cards(self):
+        print(f"before: {self.cards}")
+        self.load_settings()
         self.cards = [i // 2 + 1 for i in range(self.pair_count * 2)]
         shuffle(self.cards)
         self.cards = grid_btn(self.cards)
+        print(f"after: {self.cards}")
 
     def get_cards(self):
         return self.cards

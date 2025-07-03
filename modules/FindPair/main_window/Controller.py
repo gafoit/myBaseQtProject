@@ -1,3 +1,5 @@
+from typing import Any
+
 from PySide6 import QtWidgets, QtCore
 from PySide6.QtCore import Slot
 
@@ -21,3 +23,4 @@ class FindPairController(QtCore.QObject):
 
     def connect_view_to_model(self):
         self.view.start_game_signal.connect(self.start)
+
